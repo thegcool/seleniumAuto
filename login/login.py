@@ -18,8 +18,8 @@ class LoginScripts:
 
     def sign_in(self):
         expected_url = self.sys_prop.JIRA_URL + self.projectid
-        print(expected_url)
-        # assert expected_url in self.driver.current_url, "Expected to be in Jira login page"
+        #print(expected_url)
+        assert expected_url in self.driver.current_url, "Expected to be in Jira login page"
         self.driver.get(expected_url)
         username = os.getenv('jirauser')
         password = os.getenv('jirapassword')
