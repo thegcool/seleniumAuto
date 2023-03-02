@@ -13,10 +13,9 @@ class GetWorkHrs:
 
     def get_work_hrs(self):
         users = self.container.find_elements(By.CSS_SELECTOR, "#issue_actions_container .activity-comment-container")
-        print(users)
-        authors = ["Gokul Bhandari", "Udaya Khanal", "Rina Shrestha", "Ajita Khatiwada", "Karuna Kafle",
-                   "Swechhya Bajracharya", "Pragya Gyawali", "Deepen Upreti", "Aayush Kafle", "Sudarshan Chimariya",
-                   "Suchita Shakya", "Shashwot Joshi", "Amrit Joshi"]
+        #print(users)
+        #below list is to just filter the desired user, you can keep this empty as you neet
+        authors = ["Elon Musk", "Donald Trump", "Lionel Messi", "Vladmir Putin", "Cristiano Ronaldo"]
         columns = ["Author", "Time Spent", "Date", "Comments"]
         rows = []
 
@@ -24,7 +23,7 @@ class GetWorkHrs:
             values = {}
             author_element = user.find_element(By.CSS_SELECTOR, ".author .user-hover")
             author = author_element.get_attribute("data-username")
-
+            #if you want to filter certain user use below code otherwise you can comment it out
             if author not in authors:
                 continue
 
